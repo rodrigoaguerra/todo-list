@@ -64,6 +64,6 @@ A API estará disponível em http://localhost:3000 ou na porta que você configu
 
 5. Acesse o POSTMAN para testar as rotas:
 
-6. Importe o arquivo 'postman_collection.json' em seu usuário do POSTMAN.
+6. Importe o arquivo 'postman_collection.json' da raiz do projeto em seu usuário do POSTMAN.
 
 [Link para a collection no POSTMAN](https://speeding-firefly-69130.postman.co/workspace/todo_list~1d3284d5-deaa-498f-bd05-d06388bf1726/collection/14695510-c1f93b05-ccd6-4ead-84a8-d9c9cc2f28cd?action=share&creator=14695510)
