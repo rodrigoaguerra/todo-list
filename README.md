@@ -62,8 +62,16 @@ npm start
 ```
 A API estará disponível em http://localhost:3000 ou na porta que você configurou no arquivo .env.
 
-5. Acesse o POSTMAN para testar as rotas:
+### Testando as Rotas com Postman
 
-6. Importe o arquivo 'postman_collection.json' da raiz do projeto em seu usuário do POSTMAN.
+Para testar as rotas da API, siga estas instruções:
 
-[Link para a collection no POSTMAN](https://speeding-firefly-69130.postman.co/workspace/todo_list~1d3284d5-deaa-498f-bd05-d06388bf1726/collection/14695510-c1f93b05-ccd6-4ead-84a8-d9c9cc2f28cd?action=share&creator=14695510)
+1. Abra o Postman.
+
+2. Importe a coleção:
+- Clique em Import no Postman.
+- Selecione o arquivo **postman_collection.json** localizado na raiz do projeto.
+
+3. Execute os testes:
+- Escolha as rotas desejadas na coleção importada. [Clique aqui para acessar a collection do Postman.](https://speeding-firefly-69130.postman.co/workspace/todo_list~1d3284d5-deaa-498f-bd05-d06388bf1726/collection/14695510-c1f93b05-ccd6-4ead-84a8-d9c9cc2f28cd?action=share&creator=14695510)
+- Ajuste os dados das requisições conforme necessário.
