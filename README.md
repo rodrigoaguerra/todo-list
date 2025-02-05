@@ -41,6 +41,7 @@ npm install
 ```
 
 3. Configure as variáveis de ambiente:
+
 Crie um arquivo .env na raiz do projeto com as seguintes variáveis:
 ```bash
 # NODE
