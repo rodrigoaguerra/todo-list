@@ -5,7 +5,7 @@
 		"description": "### Descrição\n\nEsta é uma API RESTful desenvolvida com Node.js, Express.js, Sequelize e PostgreSQL para gerenciar uma lista de tarefas. A aplicação permite realizar operações CRUD (“Create, Read, Update, Delete”) em uma lista de tarefas, seguindo os princípios RESTful.\n\n## Endpoints da API\n\n### POST `/tasks`\n\nCria uma nova tarefa.\n\n#### Request Body:\n\n``` json\n{\n  \"title\": \"Nome da tarefa\",\n  \"description\": \"Descrição opcional\"\n  \"status\": \"concluída\" // opcional padrão pendente\n}\n\n ```\n\n#### Response:\n\n- **201 Created**: Tarefa criada com sucesso.\n    \n- **400 Bad Request**: Erro ao criar tarefa.\n    \n\n### GET `/tasks`\n\nLista todas as tarefas.\n\n#### Response:\n\n- **200 OK**: Lista de tarefas.\n    \n- **500 Internal Server Error**: Erro no servidor.\n    \n\n### GET `/tasks/:id`\n\nBusca uma tarefa específica.\n\n#### Response:\n\n- **200 OK**: Detalhes da tarefa.\n    \n- **404 Not Found**: Tarefa não encontrada.\n    \n\n### PUT `/tasks/:id`\n\nAtualiza uma tarefa existente.\n\n#### Request Body:\n\n``` json\n{\n  \"title\": \"Novo título\",\n  \"description\": \"Nova descrição\",\n  \"status\": \"concluída\"\n}\n\n ```\n\n#### Response:\n\n- **200 OK**: Tarefa atualizada com sucesso.\n    \n- **404 Not Found**: Tarefa não encontrada.\n    \n\n### DELETE `/tasks/:id`\n\nRemove uma tarefa.\n\n#### Response:\n\n- **200 OK**: Tarefa removida com sucesso.\n    \n- **404 Not Found**: Tarefa não encontrada.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "14695510",
-		"_collection_link": "https://speeding-firefly-69130.postman.co/workspace/1d3284d5-deaa-498f-bd05-d06388bf1726/collection/14695510-c1f93b05-ccd6-4ead-84a8-d9c9cc2f28cd?action=share&source=collection_link&creator=14695510"
+		"_collection_link": "https://speeding-firefly-69130.postman.co/workspace/todo_list~1d3284d5-deaa-498f-bd05-d06388bf1726/collection/14695510-c1f93b05-ccd6-4ead-84a8-d9c9cc2f28cd?action=share&source=collection_link&creator=14695510"
 	},
 	"item": [
 		{
@@ -14,25 +14,13 @@
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "title",
-							"value": "title 10",
-							"type": "text"
-						},
-						{
-							"key": "description",
-							"value": "description 10",
-							"type": "text"
-						},
-						{
-							"key": "status",
-							"value": "concluída",
-							"type": "text",
-							"disabled": true
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"titulo 19\",\n    \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non maximus turpis, vel laoreet nisl. Phasellus quis nisl at sem molestie interdum vitae at eros. In eget iaculis nibh. Fusce tempor lacinia metus eget euismod. Duis egestas eleifend mollis. Donec in interdum nisl.\"\n    // \"status\": \"concluída\" // Opcional\n}",
+					"options": {
+						"raw": {
+							"language": "json"
 						}
-					]
+					}
 				},
 				"url": {
 					"raw": "{{api_url}}/tasks",
@@ -71,33 +59,22 @@
 				"method": "PUT",
 				"header": [],
 				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "title",
-							"value": "title 9 (update)",
-							"type": "text"
-						},
-						{
-							"key": "description",
-							"value": "description 9 (update)",
-							"type": "text"
-						},
-						{
-							"key": "status",
-							"value": "concluída",
-							"type": "text"
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"titulo 18 (update)\",\n    \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non maximus turpis, vel laoreet nisl. Phasellus quis nisl at sem molestie interdum vitae at eros. In eget iaculis nibh. Fusce tempor lacinia metus eget euismod. Duis egestas eleifend mollis. Donec in interdum nisl.\",\n    \"status\": \"concluída\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
 						}
-					]
+					}
 				},
 				"url": {
-					"raw": "{{api_url}}/tasks/9",
+					"raw": "{{api_url}}/tasks/18",
 					"host": [
 						"{{api_url}}"
 					],
 					"path": [
 						"tasks",
-						"9"
+						"18"
 					]
 				},
 				"description": "Atualiza uma tarefa existente.\n\n#### Response:\n\n- **200 OK**: Tarefa atualizada com sucesso.\n    \n- **404 Not Found**: Tarefa não encontrada."
@@ -110,13 +87,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{api_url}}/tasks/1",
+					"raw": "{{api_url}}/tasks/13",
 					"host": [
 						"{{api_url}}"
 					],
 					"path": [
 						"tasks",
-						"1"
+						"13"
 					]
 				},
 				"description": "Remove uma tarefa.\n\n#### Response:\n\n- **200 OK**: Tarefa removida com sucesso.\n    \n- **404 Not Found**: Tarefa não encontrada."
@@ -129,13 +106,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{api_url}}/tasks/2",
+					"raw": "{{api_url}}/tasks/18",
 					"host": [
 						"{{api_url}}"
 					],
 					"path": [
 						"tasks",
-						"2"
+						"18"
 					]
 				},
 				"description": "Busca uma tarefa específica.\n\n#### Response:\n\n- **200 OK**: Detalhes da tarefa.\n    \n- **404 Not Found**: Tarefa não encontrada."
