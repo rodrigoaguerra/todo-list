@@ -11,7 +11,6 @@ router.post('/', async (req, res) => {
     const task = await Task.create(data);
     res.status(201).json(task);
   } catch (error) {
-    console.error(error);
     res.status(400).json({ error: error?.errors?.[0]?.message || error.message });
   }
 });
