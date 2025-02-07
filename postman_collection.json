@@ -2,10 +2,10 @@
 	"info": {
 		"_postman_id": "c1f93b05-ccd6-4ead-84a8-d9c9cc2f28cd",
 		"name": "API DE GERENCIAMENTO DE LISTA DE TAREFAS",
-		"description": "### Descrição\n\nEsta é uma API RESTful desenvolvida com Node.js, Express.js, Sequelize e PostgreSQL para gerenciar uma lista de tarefas. A aplicação permite realizar operações CRUD (“Create, Read, Update, Delete”) em uma lista de tarefas, seguindo os princípios RESTful.\n\n## Endpoints da API\n\n### POST `/tasks`\n\nCria uma nova tarefa.\n\n#### Request Body:\n\n``` json\n{\n  \"title\": \"Nome da tarefa\",\n  \"description\": \"Descrição opcional\"\n  \"status\": \"concluída\" // opcional padrão pendente\n}\n\n ```\n\n#### Response:\n\n- **201 Created**: Tarefa criada com sucesso.\n    \n- **400 Bad Request**: Erro ao criar tarefa.\n    \n\n### GET `/tasks`\n\nLista todas as tarefas.\n\n#### Response:\n\n- **200 OK**: Lista de tarefas.\n    \n- **500 Internal Server Error**: Erro no servidor.\n    \n\n### GET `/tasks/:id`\n\nBusca uma tarefa específica.\n\n#### Response:\n\n- **200 OK**: Detalhes da tarefa.\n    \n- **404 Not Found**: Tarefa não encontrada.\n    \n\n### PUT `/tasks/:id`\n\nAtualiza uma tarefa existente.\n\n#### Request Body:\n\n``` json\n{\n  \"title\": \"Novo título\",\n  \"description\": \"Nova descrição\",\n  \"status\": \"concluída\"\n}\n\n ```\n\n#### Response:\n\n- **200 OK**: Tarefa atualizada com sucesso.\n    \n- **404 Not Found**: Tarefa não encontrada.\n    \n\n### DELETE `/tasks/:id`\n\nRemove uma tarefa.\n\n#### Response:\n\n- **200 OK**: Tarefa removida com sucesso.\n    \n- **404 Not Found**: Tarefa não encontrada.",
+		"description": "### Descrição\n\nEsta é uma API RESTful desenvolvida com Node.js, Express.js, Sequelize e PostgreSQL para gerenciar uma lista de tarefas. A aplicação permite realizar operações CRUD (“Create, Read, Update, Delete”) em uma lista de tarefas, seguindo os princípios RESTful.\n\n## Endpoints da API\n\n### POST `/tasks`\n\nCria uma nova tarefa.\n\n#### Request Body:\n\n``` json\n{\n  \"title\": \"Nome da tarefa\",\n  \"description\": \"Descrição opcional\"\n  \"status\": \"concluída\" // opcional padrão pendente\n}\n\n ```\n\n#### Response:\n\n- **201 Created**: Tarefa criada com sucesso.\n    \n- **400 Bad Request**: Erro ao criar tarefa.\n    \n\n### GET `/tasks`\n\nLista todas as tarefas.\n\n#### Response:\n\n- **200 OK**: Lista de tarefas.\n    \n- **500 Internal Server Error**: Erro no servidor.\n    \n\n### GET `/tasks/:id`\n\nBusca uma tarefa específica.\n\n#### Response:\n\n- **200 OK**: Detalhes da tarefa.\n    \n- **404 Not Found**: Tarefa não encontrada.\n    \n- **500 Internal Server Error**: Erro no servidor.\n    \n\n### PUT `/tasks/:id`\n\nAtualiza uma tarefa existente.\n\n#### Request Body:\n\n``` json\n{\n  \"title\": \"Novo título\",\n  \"description\": \"Nova descrição\",\n  \"status\": \"concluída\"\n}\n\n ```\n\n#### Response:\n\n- **200 OK**: Tarefa atualizada com sucesso.\n    \n- **404 Not Found**: Tarefa não encontrada.\n    \n- **400 Bad Request**: Erro ao atualizar a tarefa\n    \n\n### DELETE `/tasks/:id`\n\nRemove uma tarefa.\n\n#### Response:\n\n- **204 No Content**: Tarefa removida com sucesso.\n    \n- **404 Not Found**: Tarefa não encontrada.\n    \n- **500 Internal Server Error**: Erro no servidor.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "14695510",
-		"_collection_link": "https://speeding-firefly-69130.postman.co/workspace/todo_list~1d3284d5-deaa-498f-bd05-d06388bf1726/collection/14695510-c1f93b05-ccd6-4ead-84a8-d9c9cc2f28cd?action=share&source=collection_link&creator=14695510"
+		"_collection_link": "https://speeding-firefly-69130.postman.co/workspace/1d3284d5-deaa-498f-bd05-d06388bf1726/collection/14695510-c1f93b05-ccd6-4ead-84a8-d9c9cc2f28cd?action=share&source=collection_link&creator=14695510"
 	},
 	"item": [
 		{
@@ -77,7 +77,7 @@
 						"18"
 					]
 				},
-				"description": "Atualiza uma tarefa existente.\n\n#### Response:\n\n- **200 OK**: Tarefa atualizada com sucesso.\n    \n- **404 Not Found**: Tarefa não encontrada."
+				"description": "Atualiza uma tarefa existente.\n\n#### Response:\n\n- **200 OK**: Tarefa atualizada com sucesso.\n    \n- **404 Not Found**: Tarefa não encontrada.\n    \n- **400 Bad Request**: Erro ao atualizar a tarefa"
 			},
 			"response": []
 		},
@@ -87,16 +87,16 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{api_url}}/tasks/13",
+					"raw": "{{api_url}}/tasks/12",
 					"host": [
 						"{{api_url}}"
 					],
 					"path": [
 						"tasks",
-						"13"
+						"12"
 					]
 				},
-				"description": "Remove uma tarefa.\n\n#### Response:\n\n- **200 OK**: Tarefa removida com sucesso.\n    \n- **404 Not Found**: Tarefa não encontrada."
+				"description": "Remove uma tarefa.\n\n#### Response:\n\n- **204 No Content**: Tarefa removida com sucesso.\n    \n- **404 Not Found**: Tarefa não encontrada.\n    \n- **500 Internal Server Error**: Erro no servidor."
 			},
 			"response": []
 		},
@@ -115,7 +115,7 @@
 						"18"
 					]
 				},
-				"description": "Busca uma tarefa específica.\n\n#### Response:\n\n- **200 OK**: Detalhes da tarefa.\n    \n- **404 Not Found**: Tarefa não encontrada."
+				"description": "Busca uma tarefa específica.\n\n#### Response:\n\n- **200 OK**: Detalhes da tarefa.\n    \n- **404 Not Found**: Tarefa não encontrada.\n    \n- **500 Internal Server Error**: Erro no servidor."
 			},
 			"response": []
 		}
