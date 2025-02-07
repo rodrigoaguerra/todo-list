@@ -1,4 +1,5 @@
 import express from 'express';
+import { taskCreateSchema, taskUpdateSchema } from '../validations/task.js';
 import Task from '../models/Task.js';
 
 const router = express.Router();
@@ -6,11 +7,12 @@ const router = express.Router();
 // Criar nova tarefa
 router.post('/', async (req, res) => {
   try {
-    const { title, description, status } = req.body;
-    const task = await Task.create({ title, description, status });
+    const data = taskCreateSchema.parse(req.body);
+    const task = await Task.create(data);
     res.status(201).json(task);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    console.error(error);
+    res.status(400).json({ error: error?.errors?.[0]?.message || error.message });
   }
 });
 
@@ -43,19 +45,20 @@ router.get('/:id', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, description, status } = req.body;
+    const data = taskUpdateSchema.parse(req.body);
+
     const task = await Task.findByPk(id);
     if (task) {
-      task.title = title || task.title;
-      task.description = description || task.description;
-      task.status = status || task.status;
+      task.title = data.title || task.title;
+      task.description = data.description || task.description;
+      task.status = data.status || task.status;
       await task.save();
       res.status(200).json(task);
     } else {
       res.status(404).json({ error: 'Tarefa não encontrada' });
     }
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(400).json({ error: error?.errors?.[0]?.message || error.message });
   }
 });
 
